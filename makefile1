@@ -1,0 +1,93 @@
+CFLAGS = -Wall -I/inc/
+
+all: final
+
+final: aggiorna_account.o arrivederci.o benvenuto.o deposito_prelievo.o deposito_stipendio.o failure.o header_aggiorna_account.o header_nuova_entrata.o lettura_file.o main.o menu_principale.o mostra_account.o nuova_entrata.o scrittura_file.o success.o
+	@echo
+	@echo "Linking and producing the final application"
+	@gcc $(CFLAGS)  aggiorna_account.o arrivederci.o benvenuto.o deposito_prelievo.o deposito_stipendio.o failure.o header_aggiorna_account.o header_nuova_entrata.o lettura_file.o main.o menu_principale.o mostra_account.o nuova_entrata.o scrittura_file.o success.o -o final
+	@echo "Ready to use!"
+	@echo "Command: ./final"
+
+aggiorna_account.o: src/aggiorna_account.c
+	@echo "Compiling aggiorna_account file"
+	@gcc $(CLFAGS) -c src/aggiorna_account.c
+
+arrivederci.o: src/arrivederci.c
+	@echo "Compiling arrivederci file"
+	@gcc $(CLFAGS) -c src/arrivederci.c
+
+benvenuto.o: src/benvenuto.c
+	@echo "Compiling benvenuto file"
+	@gcc $(CLFAGS) -c src/benvenuto.c
+
+deposito_prelievo.o: src/deposito_prelievo.c
+	@echo "Compiling deposito_prelievo file"
+	@gcc $(CLFAGS) -c src/deposito_prelievo.c
+
+deposito_stipendio.o: src/deposito_stipendio.c
+	@echo "Compiling deposito_stipendio file"
+	@gcc $(CLFAGS) -c deposito_stipendio.c
+
+failure.o: src/failure.c
+	@echo "Compiling failure file"
+	@gcc $(CLFAGS) -c failure.c
+
+header_aggiorna_account.o: src/header_aggiorna_account.c
+	@echo "Compiling header_aggionra_account file"
+	@gcc $(CLFAGS) -c header_aggiorna_account.c
+
+header_nuova_entrata.o: src/header_nuova_entrata.c
+	@echo "Compiling header_nuova_entrata file"
+	@gcc $(CLFAGS) -c header_nuova_entrata.c
+
+lettura_file.o: src/lettura_file.c
+	@echo "Compiling lettura_file file"
+	@gcc $(CLFAGS) -c lettura_file.c
+
+main.o: src/main.c
+	@echo "Compiling main file"
+	@gcc $(CLFAGS) -c main.c
+
+menu_principale.o: src/menu_principale.c
+	@echo "Compiling menu_principale file"
+	@gcc $(CLFAGS) -c menu_principale.c
+
+mostra_account.o: src/mostra_account.c
+	@echo "Compiling mostra_account file"
+	@gcc $(CLFAGS) -c mostra_account.c
+
+nuova_entrata.o: src/nuova_entrata.c
+	@echo "Compiling nuova_entrata file"
+	@gcc $(CLFAGS) -c nuova_entrata.c
+
+scrittura_file.o: src/scrittura_file.c
+	@echo "Compiling scrittura_file file"
+	@gcc $(CLFAGS) -c scrittura_file.c
+
+success.o: src/success.c
+	@echo "Compiling success file"
+	@gcc $(CLFAGS) -c success.c
+
+visualizza_menu.o: src/visualizza_menu.c
+	@echo "Compiling visualizza menu file"
+	@gcc $(CLFAGS) -c visualizza_menu.c
+
+clean:
+	@echo "Cleaning directory form obj files..."
+	@rm aggiorna_account.o
+	@rm arrivederci.o 
+	@rm benvenuto.o
+	@rm deposito_prelievo.o
+	@rm deposito_stipendio.o
+	@rm failure.o
+	@rm header_aggiorna_account.o
+	@rm header_nuova_entrata.o
+	@rm lettura_file.o main.o
+	@rm menu_principale.o
+	@rm mostra_account.o
+	@rm nuova_entrata.o
+	@rm scrittura_file.o
+	@rm success.o
+	@rm visualizza_menu.o
+	@echo "Done"
